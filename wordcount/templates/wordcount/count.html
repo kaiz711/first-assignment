@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>단어</title>
+          <!-- 합쳐지고 최소화된 최신 CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="row" align="center">
+            <div class="col-md-12">
+                <h3>당신이 입력한 문장은 {{ total }}개의 단어로 구성되어 있습니다.</h3>
+
+                <a href="{% url 'home' %}">다시하기</a>
+                
+                <h3>입력한 문장 : </h3>
+                {{ fulltext }}
+                
+                <h3>단어 카운트 : </h3>
+                {% for word, countTotal in dictionary %}
+                {{ word }} - {{ countTotal }}
+                <br>
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>
